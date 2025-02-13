@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CrackHash.Manager", "CrackHash.Manager\CrackHash.Manager.csproj", "{1496114E-80F9-4898-BBA6-AFDB0F7A215D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CrackHash.Common", "CrackHash.Common\CrackHash.Common.csproj", "{73D92FFB-BAFA-4D29-B456-C461547E06BE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CrackHash.Worker", "CrackHash.Worker\CrackHash.Worker.csproj", "{4271BD67-5DD9-458C-981D-3E9227A95841}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{1496114E-80F9-4898-BBA6-AFDB0F7A215D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1496114E-80F9-4898-BBA6-AFDB0F7A215D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1496114E-80F9-4898-BBA6-AFDB0F7A215D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1496114E-80F9-4898-BBA6-AFDB0F7A215D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{73D92FFB-BAFA-4D29-B456-C461547E06BE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{73D92FFB-BAFA-4D29-B456-C461547E06BE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{73D92FFB-BAFA-4D29-B456-C461547E06BE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{73D92FFB-BAFA-4D29-B456-C461547E06BE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4271BD67-5DD9-458C-981D-3E9227A95841}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4271BD67-5DD9-458C-981D-3E9227A95841}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4271BD67-5DD9-458C-981D-3E9227A95841}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4271BD67-5DD9-458C-981D-3E9227A95841}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
