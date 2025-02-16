@@ -1,4 +1,4 @@
-﻿namespace CrackHash.Common.Models;
+﻿namespace CrackHash.Manager.Api.Models;
 
 /// <summary>
 /// Модель добавления задачи
