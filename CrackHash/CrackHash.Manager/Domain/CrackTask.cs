@@ -46,4 +46,11 @@ public class CrackTask
         MaxWordLength = model.MaxWordLength;
         Status = CrackTaskStatus.Created;
     }
+
+    public void Devide()
+    { 
+        var subCrackTask = new SubCrackTask(Id, MD5Hash, MaxWordLength);
+        SubTasks.Add(subCrackTask);
+        Status = CrackTaskStatus.Planned;
+    }
 }
