@@ -51,12 +51,15 @@ public class TaskManagerService
         };
     }
 
-    public void DevideCrackTasks()
+    /// <summary>
+    /// Разделит задачи в статусе <see cref="CrackHash.Manager.Domain.CrackTaskStatus.Created"/> на подзадачи
+    /// </summary>
+    public void DivideCrackTasks()
     {
         var createdTaskPairs = _crackTasks.Where(pair => pair.Value.Status == CrackTaskStatus.Created);
         foreach (var createdTaskPair in createdTaskPairs)
         {
-            createdTaskPair.Value.Devide();
+            createdTaskPair.Value.Divide();
         }
     }
 }

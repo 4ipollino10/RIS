@@ -1,6 +1,6 @@
 using System.Text.Json.Serialization;
+using CrackHash.Manager.Application.Jobs;
 using CrackHash.Manager.Application.Services;
-using CrackHash.Manager.Jobs;
 using Quartz;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -10,12 +10,12 @@ builder.Services.AddSwaggerGen();
 builder.Services.AddControllers();
 builder.Services.AddQuartz(options =>
 {
-    var crackTaskDevideJobKey = JobKey.Create(nameof(CrackTaskDevideJob));
+    var crackTaskDivideJobKey = JobKey.Create(nameof(CrackTaskDivideJob));
     options
-        .AddJob<CrackTaskDevideJob>(crackTaskDevideJobKey)
+        .AddJob<CrackTaskDivideJob>(crackTaskDivideJobKey)
         .AddTrigger(
             trigger => trigger
-                .ForJob(crackTaskDevideJobKey)
+                .ForJob(crackTaskDivideJobKey)
                 .WithSimpleSchedule(
                     schedule => schedule
                         .WithIntervalInSeconds(1)

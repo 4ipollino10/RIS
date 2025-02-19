@@ -2,6 +2,9 @@
 
 namespace CrackHash.Manager.Domain;
 
+/// <summary>
+/// Сущность задачи
+/// </summary>
 public class CrackTask
 {
     /// <summary>
@@ -39,6 +42,9 @@ public class CrackTask
     /// </summary>
     public string? ErrorMessage { get; private set; }
     
+    /// <summary>
+    /// Ctor
+    /// </summary>
     public CrackTask(CrackTaskModel model)
     {
         Id = Guid.NewGuid();
@@ -47,7 +53,10 @@ public class CrackTask
         Status = CrackTaskStatus.Created;
     }
 
-    public void Devide()
+    /// <summary>
+    /// Выполнит нарзку подзадач, созданием <see cref="CrackHash.Manager.Domain.SubCrackTask"/>
+    /// </summary>
+    public void Divide()
     { 
         var subCrackTask = new SubCrackTask(Id, MD5Hash, MaxWordLength);
         SubTasks.Add(subCrackTask);
