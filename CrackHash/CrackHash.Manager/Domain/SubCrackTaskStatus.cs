@@ -1,5 +1,8 @@
 ﻿namespace CrackHash.Manager.Domain;
 
+/// <summary>
+/// Статусы задачи
+/// </summary>
 public enum SubCrackTaskStatus
 {
     Created = 0,

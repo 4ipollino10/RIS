@@ -1,5 +1,8 @@
 ﻿namespace CrackHash.Manager.Domain;
 
+/// <summary>
+/// Сущность подзадачи
+/// </summary>
 public class SubCrackTask
 {
     /// <summary>
@@ -37,6 +40,9 @@ public class SubCrackTask
     /// </summary>
     public int TriesCount { get; private set; }
 
+    /// <summary>
+    /// Ctor
+    /// </summary>
     public SubCrackTask(Guid parentTaskId, string md5Hash, int maxWordLength)
     {
         Id = Guid.NewGuid();
