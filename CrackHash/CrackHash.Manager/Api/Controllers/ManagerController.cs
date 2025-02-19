@@ -8,8 +8,15 @@ namespace CrackHash.Manager.Api.Controllers;
 /// Контроллер для задач
 /// </summary>
 [ApiController, Route("api/v1/crack-manager")]
-public class ManagerController(TaskManagerService taskManagerService)
+public class ManagerController
 {
+    private readonly TaskManagerService _taskManagerService;
+
+    public ManagerController(TaskManagerService taskManagerService)
+    {
+        _taskManagerService = taskManagerService;
+    }
+
     /// <summary>
     /// Добавляет новую задачу
     /// </summary>
@@ -17,7 +24,7 @@ public class ManagerController(TaskManagerService taskManagerService)
     [HttpPut("crack-tasks/add")]
     public Guid AddNewCrackTask(CrackTaskModel model)
     {
-        return taskManagerService.AddNewCrackTask(model);
+        return _taskManagerService.AddNewCrackTask(model);
     }
 
     /// <summary>
@@ -28,6 +35,6 @@ public class ManagerController(TaskManagerService taskManagerService)
     [HttpGet("crack-tasks/{crackTaskId:guid}/status")]
     public CrackTaskState GetCrackTaskState(Guid crackTaskId)
     {
-        return taskManagerService.GetCrackTaskState(crackTaskId);
+        return _taskManagerService.GetCrackTaskState(crackTaskId);
     }
 }

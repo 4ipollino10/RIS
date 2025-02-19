@@ -37,8 +37,13 @@ public class SubCrackTask
     /// </summary>
     public int TriesCount { get; private set; }
 
-    public SubCrackTask()
+    public SubCrackTask(Guid parentTaskId, string md5Hash, int maxWordLength)
     {
-        
+        Id = Guid.NewGuid();
+        ParentTaskId = parentTaskId;
+        MD5Hash = md5Hash;
+        MaxWordLength = maxWordLength;
+        Status = SubCrackTaskStatus.Created;
+        TriesCount = 0;
     }
 }

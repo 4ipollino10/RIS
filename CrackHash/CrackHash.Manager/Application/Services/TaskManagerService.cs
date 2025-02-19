@@ -50,4 +50,13 @@ public class TaskManagerService
             ErrorMessage = crackTask.ErrorMessage
         };
     }
+
+    public void DevideCrackTasks()
+    {
+        var createdTaskPairs = _crackTasks.Where(pair => pair.Value.Status == CrackTaskStatus.Created);
+        foreach (var createdTaskPair in createdTaskPairs)
+        {
+            createdTaskPair.Value.Devide();
+        }
+    }
 }
