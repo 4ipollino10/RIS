@@ -28,12 +28,12 @@ public class SubCrackTask
     /// <summary>
     /// Результат взлома хэша
     /// </summary>
-    public List<string>? Result { get; private set; }
+    public List<string>? Result { get; set; }
     
     /// <summary>
     /// Статус задачи
     /// </summary>
-    public SubCrackTaskStatus Status { get; private set; }
+    public SubCrackTaskStatus Status { get; set; }
 
     /// <summary>
     /// Количество попыток взома

@@ -1,0 +1,48 @@
+version: '3.8'
+
+services:
+  manager:
+    build:
+      context: .
+      dockerfile: src/CrackHash.Manager/Dockerfile
+    image: crackhash-manager
+    ports:
+      - "8080:80"
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - Redis__ConnectionString=redis:6379
+    depends_on:
+      - worker
+      - redis
+    networks:
+      - crackhash-net
+
+  worker:
+    build:
+      context: .
+      dockerfile: src/CrackHash.Worker/Dockerfile
+    image: crackhash-worker
+    environment:
+      - ASPNETCORE_URLS=http://+:80
+      - Manager__BaseUrl=http://manager
+      - Redis__ConnectionString=redis:6379
+    depends_on:
+      - redis
+    networks:
+      - crackhash-net
+
+  redis:
+    image: redis:alpine
+    ports:
+      - "6379:6379"
+    volumes:
+      - redis-data:/data
+    networks:
+      - crackhash-net
+
+networks:
+  crackhash-net:
+    driver: bridge
+
+volumes:
+  redis-data:

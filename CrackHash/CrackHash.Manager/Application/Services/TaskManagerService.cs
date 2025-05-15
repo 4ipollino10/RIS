@@ -62,4 +62,35 @@ public class TaskManagerService
             createdTaskPair.Value.Divide();
         }
     }
+    
+    public void CompleteSubTask(Guid parentTaskId, List<string>? words, string? error)
+    {
+        if (!_crackTasks.TryGetValue(parentTaskId, out var crackTask))
+            return;
+
+        var subTask = crackTask.SubTasks.FirstOrDefault(t => t.ParentTaskId == parentTaskId);
+        if (subTask == null)
+            return;
+
+        if (error != null)
+        {
+            subTask.Status = SubCrackTaskStatus.Error;
+            crackTask.ErrorMessage = error;
+            crackTask.Status = CrackTaskStatus.Error;
+        }
+        else
+        {
+            subTask.Result = words;
+            subTask.Status = SubCrackTaskStatus.Ready;
+        
+            if (crackTask.SubTasks.All(t => t.Status == SubCrackTaskStatus.Ready))
+            {
+                crackTask.Result = crackTask.SubTasks
+                    .SelectMany(t => t.Result ?? new List<string>())
+                    .ToList();
+                crackTask.Status = CrackTaskStatus.Ready;
+            }
+        }
+    }
+    
 }

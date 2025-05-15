@@ -25,7 +25,7 @@ public class CrackTask
     /// <summary>
     /// Статус задачи
     /// </summary>
-    public CrackTaskStatus Status { get; private set; }
+    public CrackTaskStatus Status { get; set; }
     
     /// <summary>
     /// Список нарезанных подзадач для Woker
@@ -35,12 +35,12 @@ public class CrackTask
     /// <summary>
     /// Результат взлома хэша
     /// </summary>
-    public List<string>? Result { get; private set; }
+    public List<string>? Result { get; set; }
     
     /// <summary>
     /// Сообщение об ошибке
     /// </summary>
-    public string? ErrorMessage { get; private set; }
+    public string? ErrorMessage { get; set; }
     
     /// <summary>
     /// Ctor

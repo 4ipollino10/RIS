@@ -23,6 +23,7 @@
 
     <ItemGroup>
       <ProjectReference Include="..\CrackHash.Common\CrackHash.Common.csproj" />
+      <ProjectReference Include="..\CrackHash.Worker\CrackHash.Worker.csproj" />
     </ItemGroup>
 
 </Project>
